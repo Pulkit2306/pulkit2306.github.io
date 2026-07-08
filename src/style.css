@@ -212,10 +212,10 @@ ul.links .arrow {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   perspective: 1000px;
 }
 
@@ -232,6 +232,23 @@ ul.links .arrow {
 
 .project-card:hover {
   box-shadow: 0 0 25px rgba(0, 255, 65, 0.35), inset 0 0 25px rgba(0, 255, 65, 0.05);
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 434;
+  object-fit: cover;
+  border: 1px solid var(--green-dim);
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  filter: saturate(0.9);
+  transition: filter 0.2s ease;
+}
+
+.project-card:hover .project-thumb {
+  filter: saturate(1);
 }
 
 .project-card h3 {

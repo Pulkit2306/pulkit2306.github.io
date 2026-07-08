@@ -5,6 +5,7 @@ export function renderProjects(): string {
     .map(
       (p) => `
         <div class="project-card">
+          <img class="project-thumb" src="${p.image}" alt="${p.name} screenshot" loading="lazy" width="960" height="434">
           <h3>${p.name}</h3>
           <p>${p.description}</p>
           <div class="tags">
