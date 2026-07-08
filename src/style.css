@@ -210,6 +210,28 @@ ul.links .arrow {
   margin-right: 0.5rem;
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--green);
+  opacity: 0.85;
+  transition: opacity 0.15s, filter 0.15s;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-link:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--green));
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
