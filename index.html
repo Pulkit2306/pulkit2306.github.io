@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pulkit2306</title>
+<style>
+  :root {
+    --green: #00ff41;
+    --green-dim: #0a3d1a;
+    --bg: #000;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    overflow-x: hidden;
+  }
+  body {
+    color: var(--green);
+    font-family: "Courier New", Consolas, monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  canvas#rain {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+  .overlay {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .panel {
+    background: rgba(0,0,0,0.72);
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    max-width: 560px;
+    box-shadow: 0 0 25px rgba(0,255,65,0.25), inset 0 0 25px rgba(0,255,65,0.05);
+  }
+  .glitch-line {
+    font-size: 0.8rem;
+    color: var(--green);
+    opacity: 0.6;
+    margin-bottom: 1.4rem;
+    letter-spacing: 1px;
+  }
+  h1 {
+    font-size: 2.2rem;
+    text-shadow: 0 0 8px var(--green), 0 0 20px rgba(0,255,65,0.5);
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+  }
+  .tagline {
+    color: var(--green);
+    opacity: 0.75;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1rem;
+    background: var(--green);
+    vertical-align: text-bottom;
+    box-shadow: 0 0 6px var(--green);
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  ul.links {
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+  }
+  ul.links li { margin-bottom: 0.6rem; }
+  ul.links a {
+    color: var(--green);
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.15s, text-shadow 0.15s;
+  }
+  ul.links a:hover {
+    opacity: 1;
+    text-shadow: 0 0 8px var(--green);
+  }
+  ul.links .arrow { opacity: 0.5; margin-right: 0.5rem; }
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--green);
+    opacity: 0.4;
+    font-size: 0.75rem;
+    padding: 1.2rem;
+  }
+  footer a { color: var(--green); }
+</style>
+</head>
+<body>
+
+<canvas id="rain"></canvas>
+
+<div class="overlay">
+  <div class="panel">
+    <div class="glitch-line">WAKE UP...</div>
+    <h1>PULKIT</h1>
+    <p class="tagline">this page is a work in progress — check back soon<span class="cursor"></span></p>
+
+    <ul class="links">
+      <li><span class="arrow">&gt;</span><a href="https://github.com/pulkit2306" target="_blank" rel="noopener">github.com/pulkit2306</a></li>
+      <li><span class="arrow">&gt;</span><a href="mailto:bansalpulkit0812@gmail.com">contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  built with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+
+<script>
+  const canvas = document.getElementById('rain');
+  const ctx = canvas.getContext('2d');
+  let w, h, columns, drops;
+  const chars = "アカサタナハマヤラワ0123456789ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+    const fontSize = 16;
+    columns = Math.floor(w / fontSize);
+    drops = new Array(columns).fill(1);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function draw() {
+    ctx.fillStyle = 'rgba(0,0,0,0.06)';
+    ctx.fillRect(0, 0, w, h);
+
+    const fontSize = 16;
+    ctx.fillStyle = '#00ff41';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > h && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+  setInterval(draw, 40);
+</script>
+
+</body>
+</html>
