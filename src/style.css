@@ -1,0 +1,246 @@
+:root {
+  --green: #00ff41;
+  --green-dim: #0a3d1a;
+  --bg: #000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--green);
+  font-family: "Courier New", Consolas, monospace;
+  min-height: 100vh;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+}
+
+canvas#rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.site {
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.panel {
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  max-width: 620px;
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.25), inset 0 0 25px rgba(0, 255, 65, 0.05);
+}
+
+.glitch-line {
+  font-size: 0.8rem;
+  color: var(--green);
+  opacity: 0.6;
+  margin-bottom: 1.4rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-shadow: 0 0 8px var(--green), 0 0 20px rgba(0, 255, 65, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  text-shadow: 0 0 8px var(--green), 0 0 16px rgba(0, 255, 65, 0.4);
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  color: var(--green);
+  opacity: 0.75;
+  font-size: 0.95rem;
+  margin-bottom: 1.8rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1rem;
+  background: var(--green);
+  vertical-align: text-bottom;
+  box-shadow: 0 0 6px var(--green);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+p.body-text {
+  opacity: 0.85;
+  line-height: 1.6;
+  text-align: left;
+}
+
+ul.links {
+  list-style: none;
+  text-align: left;
+  display: inline-block;
+}
+
+ul.links li {
+  margin-bottom: 0.6rem;
+}
+
+ul.links a {
+  color: var(--green);
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.15s, text-shadow 0.15s;
+}
+
+ul.links a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px var(--green);
+}
+
+ul.links .arrow {
+  opacity: 0.5;
+  margin-right: 0.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  perspective: 1000px;
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  padding: 1.5rem;
+  text-align: left;
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+}
+
+.project-card:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.35), inset 0 0 25px rgba(0, 255, 65, 0.05);
+}
+
+.project-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  text-shadow: 0 0 6px var(--green);
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+
+.project-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.project-card .tags span {
+  font-size: 0.7rem;
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  opacity: 0.8;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.project-card a {
+  color: var(--green);
+  font-size: 0.8rem;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.project-card a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px var(--green);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--green);
+  opacity: 0.4;
+  font-size: 0.75rem;
+  padding: 1.2rem;
+}
+
+footer a {
+  color: var(--green);
+}
+
+nav.sitenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+nav.sitenav a {
+  color: var(--green);
+  text-decoration: none;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  letter-spacing: 1px;
+  transition: opacity 0.15s, text-shadow 0.15s;
+}
+
+nav.sitenav a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px var(--green);
+}
