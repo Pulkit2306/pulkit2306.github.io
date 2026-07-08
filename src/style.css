@@ -111,6 +111,24 @@ p.body-text {
   text-align: left;
 }
 
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: box-shadow 0.15s, background 0.15s;
+}
+
+.resume-btn:hover {
+  background: rgba(0, 255, 65, 0.08);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
 ul.links {
   list-style: none;
   text-align: left;

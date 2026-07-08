@@ -5,24 +5,19 @@ export interface Project {
   link: string;
 }
 
-// Placeholder entries — replace with your real projects.
 export const projects: Project[] = [
   {
-    name: "Project One",
-    description: "One-line placeholder description of what this project does and why it's interesting.",
-    tags: ["TypeScript", "Three.js"],
-    link: "https://github.com/pulkit2306",
+    name: "ClaimsAI",
+    description:
+      "AI-powered insurance claims platform: 6 event-driven Spring Boot microservices, a Spring AI + pgvector RAG pipeline for claims chat, fraud risk scoring, and Elasticsearch semantic search — 14 containers, one-command Docker Compose deployment.",
+    tags: ["Java", "Spring Boot", "Angular", "Kafka", "Elasticsearch", "PostgreSQL"],
+    link: "https://pulkit2306.github.io/ClaimsAI",
   },
   {
-    name: "Project Two",
-    description: "One-line placeholder description of what this project does and why it's interesting.",
-    tags: ["Python", "Algorithms"],
-    link: "https://github.com/pulkit2306",
-  },
-  {
-    name: "Project Three",
-    description: "One-line placeholder description of what this project does and why it's interesting.",
-    tags: ["C++", "Systems"],
-    link: "https://github.com/pulkit2306",
+    name: "QuantFrame",
+    description:
+      "Algo-trading data pipeline & backtesting engine: async market data ingestion from Alpaca (10+ symbols), a partitioned PostgreSQL time-series schema with sub-10ms range scans, an idempotent gap-fill orchestrator, and a C++ lock-free order book engine in progress.",
+    tags: ["Python", "asyncio", "C++", "PostgreSQL", "Docker"],
+    link: "https://pulkit2306.github.io/QuantFrame",
   },
 ];

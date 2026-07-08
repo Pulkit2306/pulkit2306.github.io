@@ -4,6 +4,7 @@ import { mountFallbackRain2D } from "./scenes/fallbackRain2D";
 import { renderHero } from "./sections/hero";
 import { renderAbout } from "./sections/about";
 import { renderProjects, initProjectTilt } from "./sections/projects";
+import { renderResume } from "./sections/resume";
 import { renderContact } from "./sections/contact";
 
 const app = document.getElementById("app")!;
@@ -14,12 +15,14 @@ app.innerHTML = `
     <a href="#hero">home</a>
     <a href="#about">about</a>
     <a href="#projects">projects</a>
+    <a href="#resume">resume</a>
     <a href="#contact">contact</a>
   </nav>
   <div class="site">
     ${renderHero()}
     ${renderAbout()}
     ${renderProjects()}
+    ${renderResume()}
     ${renderContact()}
   </div>
   <footer>built with <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> &amp; <a href="https://threejs.org/" target="_blank" rel="noopener">Three.js</a></footer>

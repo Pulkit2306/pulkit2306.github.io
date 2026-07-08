@@ -1,2 +1,0 @@
-Placeholder — replace public/resume-placeholder.txt with your actual resume PDF
-(e.g. public/resume.pdf) and update the link in src/sections/contact.ts.
