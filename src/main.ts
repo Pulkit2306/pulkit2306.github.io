@@ -3,6 +3,7 @@ import { decideRenderTier } from "./utils/capabilities";
 import { mountFallbackRain2D } from "./scenes/fallbackRain2D";
 import { renderHero } from "./sections/hero";
 import { renderAbout } from "./sections/about";
+import { renderExperience } from "./sections/experience";
 import { renderProjects, initProjectTilt } from "./sections/projects";
 import { renderResume } from "./sections/resume";
 import { renderContact } from "./sections/contact";
@@ -14,6 +15,7 @@ app.innerHTML = `
   <nav class="sitenav">
     <a href="#hero">home</a>
     <a href="#about">about</a>
+    <a href="#experience">experience</a>
     <a href="#projects">projects</a>
     <a href="#resume">resume</a>
     <a href="#contact">contact</a>
@@ -21,6 +23,7 @@ app.innerHTML = `
   <div class="site">
     ${renderHero()}
     ${renderAbout()}
+    ${renderExperience()}
     ${renderProjects()}
     ${renderResume()}
     ${renderContact()}
