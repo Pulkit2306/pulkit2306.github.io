@@ -4,8 +4,7 @@ export function renderExperience(): string {
       <div class="panel">
         <h2>&gt; experience</h2>
         <p class="body-text exp-note">
-          One professional internship to date — nothing else yet. I'm early in my career
-          and actively looking for my first full-time Software Engineer role.
+          I'm early in my career and actively looking for my first full-time Software Engineer role.
         </p>
         <div class="exp-entry">
           <div class="exp-header">
