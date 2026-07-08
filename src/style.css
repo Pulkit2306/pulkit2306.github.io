@@ -111,6 +111,10 @@ p.body-text {
   text-align: left;
 }
 
+p.body-text + p.body-text {
+  margin-top: 1rem;
+}
+
 .resume-btn {
   display: inline-block;
   margin-top: 1rem;
