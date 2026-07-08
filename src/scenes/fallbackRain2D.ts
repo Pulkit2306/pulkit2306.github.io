@@ -5,17 +5,34 @@ export function mountFallbackRain2D(canvas: HTMLCanvasElement): () => void {
   const ctx = canvas.getContext("2d");
   if (!ctx) return () => {};
 
-  let w: number, h: number, drops: number[];
+  let w = 0;
+  let h = 0;
+  let drops: number[] = [];
   const fontSize = 16;
 
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
+  function applyResize() {
+    const newW = window.innerWidth;
+    const newH = window.innerHeight;
+    // Mobile browsers show/hide their address bar while scrolling, firing
+    // resize events with only a height change — ignore those so the rain
+    // doesn't reset mid-scroll. Only react to width changes or large height
+    // jumps (orientation change, real window resize).
+    if (w !== 0 && newW === w && Math.abs(newH - h) < 150) {
+      return;
+    }
+    w = canvas.width = newW;
+    h = canvas.height = newH;
     const columns = Math.floor(w / fontSize);
     drops = new Array(columns).fill(1);
   }
-  window.addEventListener("resize", resize);
-  resize();
+
+  let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyResize, 200);
+  }
+  window.addEventListener("resize", onResize);
+  applyResize();
 
   function draw() {
     ctx!.fillStyle = "rgba(0,0,0,0.06)";
@@ -56,7 +73,8 @@ export function mountFallbackRain2D(canvas: HTMLCanvasElement): () => void {
 
   return () => {
     cancelAnimationFrame(rafId);
-    window.removeEventListener("resize", resize);
+    clearTimeout(resizeTimer);
+    window.removeEventListener("resize", onResize);
     document.removeEventListener("visibilitychange", onVisibilityChange);
   };
 }

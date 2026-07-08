@@ -200,11 +200,29 @@ export function mountMatrixRain3D(canvas: HTMLCanvasElement): () => void {
   }
   window.addEventListener("mousemove", onMouseMove);
 
-  function onResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+  let lastW = window.innerWidth;
+  let lastH = window.innerHeight;
+  function applyResize() {
+    const newW = window.innerWidth;
+    const newH = window.innerHeight;
+    // Mobile browsers show/hide their address bar while scrolling, firing
+    // resize events with only a height change — ignore those so we don't
+    // reallocate render targets (visible flicker) on every scroll tick.
+    if (newW === lastW && Math.abs(newH - lastH) < 150) {
+      return;
+    }
+    lastW = newW;
+    lastH = newH;
+    camera.aspect = newW / newH;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    composer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(newW, newH);
+    composer.setSize(newW, newH);
+  }
+
+  let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(applyResize, 200);
   }
   window.addEventListener("resize", onResize);
 
@@ -257,6 +275,7 @@ export function mountMatrixRain3D(canvas: HTMLCanvasElement): () => void {
 
   return () => {
     cancelAnimationFrame(rafId);
+    clearTimeout(resizeTimer);
     window.removeEventListener("mousemove", onMouseMove);
     window.removeEventListener("resize", onResize);
     document.removeEventListener("visibilitychange", onVisibilityChange);
