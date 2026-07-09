@@ -11,7 +11,10 @@ export function renderProjects(): string {
           <div class="tags">
             ${p.tags.map((t) => `<span>${t}</span>`).join("")}
           </div>
-          <a href="${p.link}" target="_blank" rel="noopener">view &rarr;</a>
+          <div class="project-links">
+            <a href="${p.demoLink}" target="_blank" rel="noopener">live demo &rarr;</a>
+            <a href="${p.repoLink}" target="_blank" rel="noopener">source code &rarr;</a>
+          </div>
         </div>
       `
     )

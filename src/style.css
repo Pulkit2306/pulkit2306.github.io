@@ -304,6 +304,12 @@ ul.links .arrow {
   border-radius: 2px;
 }
 
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
 .project-card a {
   color: var(--green);
   font-size: 0.85rem;
