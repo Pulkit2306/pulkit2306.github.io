@@ -236,7 +236,7 @@ ul.links .arrow {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: 1.5rem;
   width: 100%;
   max-width: 1000px;
@@ -348,6 +348,25 @@ nav.sitenav {
   padding: 1rem;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
+}
+
+@media (max-width: 640px) {
+  nav.sitenav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1.3rem;
+    padding: 0.75rem 1rem;
+  }
+
+  nav.sitenav::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav.sitenav a {
+    flex: 0 0 auto;
+  }
 }
 
 nav.sitenav a {
