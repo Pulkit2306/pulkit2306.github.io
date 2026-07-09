@@ -63,7 +63,7 @@ section {
 .glitch-line {
   font-size: 0.8rem;
   color: var(--green);
-  opacity: 0.6;
+  opacity: 0.7;
   margin-bottom: 1.4rem;
   letter-spacing: 1px;
 }
@@ -84,8 +84,9 @@ h2 {
 
 .tagline {
   color: var(--green);
-  opacity: 0.75;
-  font-size: 0.95rem;
+  opacity: 0.95;
+  font-size: 1.05rem;
+  line-height: 1.5;
   margin-bottom: 1.8rem;
 }
 
@@ -106,8 +107,9 @@ h2 {
 }
 
 p.body-text {
-  opacity: 0.85;
-  line-height: 1.6;
+  opacity: 0.96;
+  font-size: 1.02rem;
+  line-height: 1.65;
   text-align: left;
 }
 
@@ -116,8 +118,8 @@ p.body-text + p.body-text {
 }
 
 .exp-note {
-  opacity: 0.65;
-  font-size: 0.85rem;
+  opacity: 0.8;
+  font-size: 0.9rem;
   margin-bottom: 1.5rem;
 }
 
@@ -147,8 +149,8 @@ p.body-text + p.body-text {
 }
 
 .exp-company {
-  font-size: 0.85rem;
-  opacity: 0.75;
+  font-size: 0.88rem;
+  opacity: 0.85;
   margin-bottom: 0.8rem;
 }
 
@@ -159,10 +161,10 @@ p.body-text + p.body-text {
 }
 
 .exp-bullets li {
-  opacity: 0.85;
+  opacity: 0.94;
   line-height: 1.6;
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 .resume-btn {
@@ -196,7 +198,7 @@ ul.links li {
 ul.links a {
   color: var(--green);
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 0.95;
   transition: opacity 0.15s, text-shadow 0.15s;
 }
 
@@ -280,9 +282,9 @@ ul.links .arrow {
 }
 
 .project-card p {
-  font-size: 0.85rem;
-  opacity: 0.8;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  opacity: 0.94;
+  line-height: 1.55;
   margin-bottom: 0.9rem;
 }
 
@@ -304,9 +306,9 @@ ul.links .arrow {
 
 .project-card a {
   color: var(--green);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-decoration: none;
-  opacity: 0.85;
+  opacity: 0.95;
 }
 
 .project-card a:hover {
@@ -319,7 +321,7 @@ footer {
   z-index: 1;
   text-align: center;
   color: var(--green);
-  opacity: 0.4;
+  opacity: 0.5;
   font-size: 0.75rem;
   padding: 1.2rem;
 }
@@ -346,7 +348,7 @@ nav.sitenav a {
   color: var(--green);
   text-decoration: none;
   font-size: 0.85rem;
-  opacity: 0.75;
+  opacity: 0.88;
   letter-spacing: 1px;
   transition: opacity 0.15s, text-shadow 0.15s;
 }
