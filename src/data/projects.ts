@@ -20,7 +20,7 @@ export const projects: Project[] = [
   {
     name: "QuantFrame",
     description:
-      "Algo-trading data pipeline & backtesting engine: async market data ingestion from Alpaca (10+ symbols), a partitioned PostgreSQL time-series schema with sub-10ms range scans, an idempotent gap-fill orchestrator, and a C++ lock-free order book engine in progress.",
+      "Algo-trading data pipeline & backtesting engine: async market data ingestion in Python (10+ symbols, OHLCV/NBBO quotes) with concurrent batch fetching, a partitioned PostgreSQL schema with an idempotent recovery process for safe restarts, and a C++ order book engine with concurrent, multi-threaded data structures and nanosecond-precision timestamps.",
     tags: ["Python", "asyncio", "C++", "PostgreSQL", "Docker"],
     demoLink: "https://pulkit2306.github.io/QuantFrame",
     repoLink: "https://github.com/Pulkit2306/QuantFrame",

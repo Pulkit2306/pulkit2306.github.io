@@ -15,6 +15,7 @@ export function renderExperience(): string {
           <ul class="exp-bullets">
             <li>Shipped RESTful APIs (Spring Boot/Python microservices) improving throughput by 20%; applied OOP design patterns (strategy, repository, factory) across a large Java codebase.</li>
             <li>Automated CI/CD with GitHub Actions + Docker, cutting deployment time by 40%; led code reviews resolving 30+ critical issues in Agile sprints.</li>
+            <li>Implemented test suites across features using Selenium and Mockito, and designed database schemas in Oracle.</li>
           </ul>
         </div>
       </div>
