@@ -128,6 +128,10 @@ p.body-text + p.body-text {
   padding-top: 1.2rem;
 }
 
+.exp-entry + .exp-entry {
+  margin-top: 1.5rem;
+}
+
 .exp-header {
   display: flex;
   flex-wrap: wrap;
@@ -152,6 +156,17 @@ p.body-text + p.body-text {
   font-size: 0.88rem;
   opacity: 0.85;
   margin-bottom: 0.8rem;
+}
+
+.exp-company a {
+  color: var(--green);
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.exp-company a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px var(--green);
 }
 
 .exp-bullets {
