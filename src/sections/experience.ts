@@ -21,6 +21,7 @@ export function renderExperience(): string {
             <li>Engineered bilingual EN/FR UI and data-driven dynamic styling.</li>
             <li>Directed a full content audit against source data, resolving discrepancies through direct coordination with competition leadership.</li>
           </ul>
+          <a class="exp-ref-link" href="/experience/jmicc-reference-letter.jpg" target="_blank" rel="noopener">&gt; view reference letter &rarr;</a>
         </div>
         <div class="exp-entry">
           <div class="exp-header">
